@@ -30,4 +30,11 @@ public class Problem5 {
         }
         return result;
     }
+
+    public int countPair2and5(int cnt2, int cnt5){
+        int pair;
+        pair = cnt2 > cnt5 ? cnt2 : cnt5;
+        return pair;
+    }
+
 }
