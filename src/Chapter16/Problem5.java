@@ -1,15 +1,33 @@
 package Chapter16;
 
+import java.util.Scanner;
+
 /**
  * Created by YangHC on 2018-01-06.
  */
 public class Problem5 {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Problem5 p5 = new Problem5();
+
+        Scanner s = new Scanner(System.in);
+
+        System.out.println(p5.findLastZeros(p5.factorialN(s.nextInt())));
     }
 
-    public static int add(){
-        System.out.println("Hello");
-        return 3+4;
+    public int findLastZeros(int num){
+        int cnt = 0;
+        while(num%10==0){
+            num/=10;
+            cnt ++;
+        }
+        return cnt;
+    }
+
+    public int factorialN(int n){
+        int result=1;
+        for(int i=2;i<=n;i++){
+            result*=i;
+        }
+        return result;
     }
 }

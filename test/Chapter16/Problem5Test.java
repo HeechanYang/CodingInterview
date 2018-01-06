@@ -8,7 +8,14 @@ import org.junit.*;
  */
 public class Problem5Test {
     @Test
-    public void testAdd(){
-        assertEquals("Hello World!", Problem5.add(),8);
+    public void testFindLastZeros(){
+        Problem5 p5 = new Problem5();
+        assertEquals("LastZero",p5.findLastZeros(124000), 3);
+    }
+
+    @Test
+    public void testFactorialN(){
+        Problem5 p5 = new Problem5();
+        assertEquals("Factorial n", p5.factorialN(5), 120);
     }
 }
