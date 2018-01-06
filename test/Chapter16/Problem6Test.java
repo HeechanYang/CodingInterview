@@ -27,7 +27,16 @@ public class Problem6Test {
     public void getMinGapPair(){
         assertEquals(11, p6.getMinGapPair(p6.getArr1(),p6.getArr2())[0]);
         assertEquals(8, p6.getMinGapPair(p6.getArr1(),p6.getArr2())[1]);
+    }
 
-
+    @Test
+    public void getMinValueOfArray(){
+        assertEquals(1, p6.getMinValueOfArray(p6.getArr1()));
+        assertEquals(8, p6.getMinValueOfArray(p6.getArr2()));
+    }
+    @Test
+    public void getMaxValueOfArray(){
+        assertEquals(15, p6.getMaxValueOfArray(p6.getArr1()));
+        assertEquals(235, p6.getMaxValueOfArray(p6.getArr2()));
     }
 }
