@@ -1,6 +1,5 @@
 package Chapter16;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -14,7 +13,6 @@ public class Problem5 {
 
         Scanner scanner = new Scanner(System.in);
 
-//        System.out.println(p5.findLastZeros(p5.factorialN(s.nextInt())));
         System.out.print("n을 입력해주세요(n은 자연수) : ");
         int n = scanner.nextInt();
         while (n < 1) {
@@ -22,6 +20,7 @@ public class Problem5 {
             n = scanner.nextInt();
         }
 
+//        System.out.println(p5.findLastZeros(p5.factorialN(n))));
         System.out.println(p5.newFindLastZeros(n));
     }
 
@@ -36,7 +35,7 @@ public class Problem5 {
 
     public long factorialN(int n) {
         long result = 1;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             result *= i;
         }
         return result;
