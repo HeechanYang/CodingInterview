@@ -7,15 +7,25 @@ import org.junit.*;
  * Created by YangHC on 2018-01-06.
  */
 public class Problem5Test {
+    private static Problem5 p5;
+
+    @BeforeClass
+    public static void makeInstance()throws Exception {
+        p5 = new Problem5();
+    }
+
     @Test
     public void testFindLastZeros(){
-        Problem5 p5 = new Problem5();
-        assertEquals("LastZero",p5.findLastZeros(124000), 3);
+        assertEquals(3, p5.findLastZeros(124000));
     }
 
     @Test
     public void testFactorialN(){
-        Problem5 p5 = new Problem5();
-        assertEquals("Factorial n", p5.factorialN(5), 120);
+        assertEquals(120, p5.factorialN(5));
+    }
+
+    @Test
+    public void testCount(){
+
     }
 }
