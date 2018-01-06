@@ -25,7 +25,10 @@ public class Problem5Test {
     }
 
     @Test
-    public void testCount(){
-
+    public void testCount5(){
+        assertEquals(1, p5.count5(5));
+        assertEquals(2, p5.count5(25));
+        assertEquals(0, p5.count5(26));
+        assertEquals(2, p5.count5(100));
     }
 }

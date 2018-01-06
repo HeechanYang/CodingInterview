@@ -6,10 +6,20 @@ import java.util.Scanner;
  * Created by YangHC on 2018-01-06.
  */
 public class Problem5 {
+    private int cnt5;
+
     public static void main(String[] args) {
         Problem5 p5 = new Problem5();
 
         Scanner s = new Scanner(System.in);
+
+        System.out.println("f(5) : " + p5.factorialN(5));
+        System.out.println("f(6) : " + p5.factorialN(6));
+        System.out.println("f(7) : " + p5.factorialN(7));
+        System.out.println("f(8) : " + p5.factorialN(8));
+        System.out.println("f(9) : " + p5.factorialN(9));
+        System.out.println("f(10) : " + p5.factorialN(10));
+        System.out.println("f(15) : " + p5.factorialN(15));
 
         System.out.println(p5.findLastZeros(p5.factorialN(s.nextInt())));
     }
@@ -31,10 +41,12 @@ public class Problem5 {
         return result;
     }
 
-    public int countPair2and5(int cnt2, int cnt5){
-        int pair;
-        pair = cnt2 > cnt5 ? cnt2 : cnt5;
-        return pair;
+    public int count5(int num){
+        int cnt=0;
+        while (num%5==0){
+            num/=5;
+            cnt ++;
+        }
+        return cnt;
     }
-
 }
