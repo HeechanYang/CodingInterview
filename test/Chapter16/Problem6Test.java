@@ -17,8 +17,11 @@ public class Problem6Test {
     }
 
     @Test
-    public void testFindLastZeros(){
-//        assertEquals(3,);
+    public void getGap(){
+        assertEquals(101, p6.getGap(162,263));
+        assertEquals(99, p6.getGap(262,163));
+        assertEquals(1, p6.getGap(263,262));
+        assertEquals(0, p6.getGap(262,262));
     }
 
 }
