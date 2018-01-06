@@ -23,5 +23,8 @@ public class Problem6Test {
         assertEquals(1, p6.getGap(263,262));
         assertEquals(0, p6.getGap(262,262));
     }
-
+    @Test
+    public void getMinGapPair(){
+//        assertEquals(3, p6.getMinGap(p6.getArr1(),p6.getArr2()));
+    }
 }
