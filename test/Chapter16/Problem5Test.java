@@ -31,4 +31,13 @@ public class Problem5Test {
         assertEquals(0, p5.count5(26));
         assertEquals(2, p5.count5(100));
     }
+
+    @Test
+    public void testNewFindLastZeros(){
+        assertEquals(1, p5.newFindLastZeros(5));
+        assertEquals(2, p5.newFindLastZeros(10));
+        assertEquals(3, p5.newFindLastZeros(15));
+        assertEquals(4, p5.newFindLastZeros(20));
+        assertEquals(6, p5.newFindLastZeros(25));
+    }
 }

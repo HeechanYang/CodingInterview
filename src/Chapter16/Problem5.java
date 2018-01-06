@@ -11,7 +11,7 @@ public class Problem5 {
     public static void main(String[] args) {
         Problem5 p5 = new Problem5();
 
-        Scanner s = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("f(5) : " + p5.factorialN(5));
         System.out.println("f(6) : " + p5.factorialN(6));
@@ -21,31 +21,40 @@ public class Problem5 {
         System.out.println("f(10) : " + p5.factorialN(10));
         System.out.println("f(15) : " + p5.factorialN(15));
 
-        System.out.println(p5.findLastZeros(p5.factorialN(s.nextInt())));
+//        System.out.println(p5.findLastZeros(p5.factorialN(s.nextInt())));
+        System.out.println(p5.newFindLastZeros(scanner.nextInt()));
     }
 
-    public int findLastZeros(long num){
+    public int findLastZeros(long num) {
         int cnt = 0;
-        while(num%10==0){
-            num/=10;
-            cnt ++;
+        while (num % 10 == 0) {
+            num /= 10;
+            cnt++;
         }
         return cnt;
     }
 
-    public long factorialN(int n){
-        long result=1;
-        for(int i=2;i<=n;i++){
-            result*=i;
+    public long factorialN(int n) {
+        long result = 1;
+        for (int i = 2; i <= n; i++) {
+            result *= i;
         }
         return result;
     }
 
-    public int count5(int num){
-        int cnt=0;
-        while (num%5==0){
-            num/=5;
-            cnt ++;
+    public int newFindLastZeros(int n) {
+        int cnt = 0;
+        for (int i = 1; i < n; i++) {
+            cnt += count5(i);
+        }
+        return cnt;
+    }
+
+    public int count5(int num) {
+        int cnt = 0;
+        while (num % 5 == 0) {
+            num /= 5;
+            cnt++;
         }
         return cnt;
     }
