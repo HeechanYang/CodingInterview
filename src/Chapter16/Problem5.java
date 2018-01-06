@@ -1,5 +1,6 @@
 package Chapter16;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -13,16 +14,15 @@ public class Problem5 {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("f(5) : " + p5.factorialN(5));
-        System.out.println("f(6) : " + p5.factorialN(6));
-        System.out.println("f(7) : " + p5.factorialN(7));
-        System.out.println("f(8) : " + p5.factorialN(8));
-        System.out.println("f(9) : " + p5.factorialN(9));
-        System.out.println("f(10) : " + p5.factorialN(10));
-        System.out.println("f(15) : " + p5.factorialN(15));
-
 //        System.out.println(p5.findLastZeros(p5.factorialN(s.nextInt())));
-        System.out.println(p5.newFindLastZeros(scanner.nextInt()));
+        System.out.print("n을 입력해주세요(n은 자연수) : ");
+        int n = scanner.nextInt();
+        while (n < 1) {
+            System.out.print("n을 다시 입력해주세요(n은 자연수) : ");
+            n = scanner.nextInt();
+        }
+
+        System.out.println(p5.newFindLastZeros(n));
     }
 
     public int findLastZeros(long num) {
@@ -44,7 +44,7 @@ public class Problem5 {
 
     public int newFindLastZeros(int n) {
         int cnt = 0;
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i <= n; i++) {
             cnt += count5(i);
         }
         return cnt;
