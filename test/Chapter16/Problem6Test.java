@@ -25,6 +25,9 @@ public class Problem6Test {
     }
     @Test
     public void getMinGapPair(){
-//        assertEquals(3, p6.getMinGap(p6.getArr1(),p6.getArr2()));
+        assertEquals(11, p6.getMinGapPair(p6.getArr1(),p6.getArr2())[0]);
+        assertEquals(8, p6.getMinGapPair(p6.getArr1(),p6.getArr2())[1]);
+
+
     }
 }
