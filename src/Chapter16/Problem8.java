@@ -15,10 +15,11 @@ public class Problem8 {
         Problem8 p8 = new Problem8();
         System.out.println("1000 : " + p8.makeStringWholeNumber(1000));
         System.out.println("2023 : " + p8.makeStringWholeNumber(2023));
-        System.out.println("50023 : " + p8.makeStringWholeNumber(50023));
+        System.out.println("0 : " + p8.makeStringWholeNumber(0));
         System.out.println("987723 : " + p8.makeStringWholeNumber(987723));
         System.out.println("987 : " + p8.makeStringWholeNumber(987));
         System.out.println("123 : " + p8.makeStringWholeNumber(123));
+        System.out.println("-123 : " + p8.makeStringWholeNumber(-123));
         System.out.println("10 : " + p8.makeStringWholeNumber(10));
         System.out.println("1000000 : " + p8.makeStringWholeNumber(1000000));
         System.out.println("123456789 : " + p8.makeStringWholeNumber(123456789));
@@ -27,6 +28,12 @@ public class Problem8 {
 
     public String makeStringWholeNumber(long number) {
         String numberStr = "";
+        if (number == 0) {
+            return "Zero";
+        } else if (number < 0) {
+            numberStr += "Negative";
+            number *= -1;
+        }
         int devidedNumbers[] = getDevidedNumbers(number);
         for (int i = getCountOfDevidedNumber(number) - 1; i >= 0; i--) {
             if (devidedNumbers[i] != 0) {
