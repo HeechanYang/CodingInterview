@@ -17,6 +17,13 @@ public class Problem8Test {
     }
 
     @Test
-    public void getMaxValueOfArray(){
+    public void getDevideCountOfNumber(){
+        assertEquals(1,p8.getDevideCountOfNumber(100));
+        assertEquals(2,p8.getDevideCountOfNumber(1000));
+        assertEquals(2,p8.getDevideCountOfNumber(10000));
+        assertEquals(3,p8.getDevideCountOfNumber(1000000));
+        assertEquals(3,p8.getDevideCountOfNumber(10000000));
     }
+
+
 }

@@ -15,4 +15,23 @@ public class Problem8 {
 
     }
 
+    public int[] devideNumber(int number) {
+        int devideCount = getDevideCountOfNumber(number);
+        int numberArr[] = new int[devideCount];
+
+        for (int i = 0; i < devideCount; i++) {
+            numberArr[i] = number % 1000;
+            number /= 1000;
+        }
+        return numberArr;
+    }
+
+    public int getDevideCountOfNumber(int number) {
+        int devideCount = 1;
+        while (number / 1000 > 0) {
+            number /= 1000;
+            devideCount++;
+        }
+        return devideCount;
+    }
 }
