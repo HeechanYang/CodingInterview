@@ -15,9 +15,22 @@ public class Problem8 {
 
     }
 
-    public String makeStringDevidedNumber(int devidedNumber){
+    public String makeStringDevidedNumber(int devidedNumber) {
+        if (devidedNumber == 0) {
+            return "";
+        }
+        String result="";
 
-        return "";
+        if(devidedNumber>=100){
+            int hundredsInt = devidedNumber/100;
+            String hundreds =  units[hundredsInt-1] + " Hundred";
+            if(hundredsInt != 1) {
+                hundreds += "s";
+            }
+            result += hundreds;
+        }
+
+        return result;
     }
 
     public int[] devideNumber(int number) {

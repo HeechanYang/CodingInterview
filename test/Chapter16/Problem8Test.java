@@ -33,4 +33,13 @@ public class Problem8Test {
         assertEquals(3,p8.getCountOfDevidedNumber(1000000));
         assertEquals(3,p8.getCountOfDevidedNumber(10000000));
     }
+
+
+    @Test
+    public void makeStringDevidedNumber(){
+        assertEquals("",p8.makeStringDevidedNumber(0));
+        assertEquals("One Hundred",p8.makeStringDevidedNumber(100));
+        assertEquals("Two Hundreds",p8.makeStringDevidedNumber(200));
+        assertEquals("Three Hundreds",p8.makeStringDevidedNumber(323));
+    }
 }
