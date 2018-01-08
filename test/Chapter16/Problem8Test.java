@@ -39,7 +39,7 @@ public class Problem8Test {
     public void makeStringDevidedNumber(){
         assertEquals("",p8.makeStringDevidedNumber(0));
         assertEquals("One Hundred",p8.makeStringDevidedNumber(100));
-        assertEquals("Two Hundreds",p8.makeStringDevidedNumber(200));
-        assertEquals("Three Hundreds",p8.makeStringDevidedNumber(323));
+        assertEquals("Two Hundred",p8.makeStringDevidedNumber(200));
+        assertEquals("Three Hundred Twenty Three",p8.makeStringDevidedNumber(323));
     }
 }
