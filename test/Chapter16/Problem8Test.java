@@ -18,11 +18,11 @@ public class Problem8Test {
 
     @Test
     public void devideNumber(){
-        assertEquals(100,p8.devideNumber(100)[0]);
-        assertEquals(1,p8.devideNumber(2001)[0]);
-        assertEquals(2,p8.devideNumber(2001)[1]);
-        assertEquals(456,p8.devideNumber(123456)[0]);
-        assertEquals(123,p8.devideNumber(123456)[1]);
+        assertEquals(100,p8.getDevidedNumbers(100)[0]);
+        assertEquals(1,p8.getDevidedNumbers(2001)[0]);
+        assertEquals(2,p8.getDevidedNumbers(2001)[1]);
+        assertEquals(456,p8.getDevidedNumbers(123456)[0]);
+        assertEquals(123,p8.getDevidedNumbers(123456)[1]);
     }
 
     @Test
@@ -32,6 +32,7 @@ public class Problem8Test {
         assertEquals(2,p8.getCountOfDevidedNumber(10000));
         assertEquals(3,p8.getCountOfDevidedNumber(1000000));
         assertEquals(3,p8.getCountOfDevidedNumber(10000000));
+        assertEquals(3,p8.getCountOfDevidedNumber(123456789));
     }
 
 
