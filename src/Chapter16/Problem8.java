@@ -15,8 +15,13 @@ public class Problem8 {
 
     }
 
+    public String makeStringDevidedNumber(int devidedNumber){
+
+        return "";
+    }
+
     public int[] devideNumber(int number) {
-        int devideCount = getDevideCountOfNumber(number);
+        int devideCount = getCountOfDevidedNumber(number);
         int numberArr[] = new int[devideCount];
 
         for (int i = 0; i < devideCount; i++) {
@@ -26,7 +31,7 @@ public class Problem8 {
         return numberArr;
     }
 
-    public int getDevideCountOfNumber(int number) {
+    public int getCountOfDevidedNumber(int number) {
         int devideCount = 1;
         while (number / 1000 > 0) {
             number /= 1000;
