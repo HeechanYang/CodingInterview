@@ -1,6 +1,7 @@
 package Chapter16;
 
 import java.io.*;
+import java.util.Arrays;
 
 /**
  * Created by YangHC on 2018-01-08.
@@ -10,22 +11,17 @@ public class Problem8 {
     private static final String firstTens[] = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
     private static final String Tens[] = {"Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
     private static final String block[] = {"", "Thousand", "Million", "Billion"};
-
     public static void main(String[] args) throws IOException {
         Problem8 p8 = new Problem8();
         System.out.println("1000 : " + p8.makeStringWholeNumber(1000));
-        System.out.println("2023 : " + p8.makeStringWholeNumber(2023));
-        System.out.println("0 : " + p8.makeStringWholeNumber(0));
-        System.out.println("987723 : " + p8.makeStringWholeNumber(987723));
-        System.out.println("987 : " + p8.makeStringWholeNumber(987));
-        System.out.println("123 : " + p8.makeStringWholeNumber(123));
-        System.out.println("-123 : " + p8.makeStringWholeNumber(-123));
-        System.out.println("10 : " + p8.makeStringWholeNumber(10));
-        System.out.println("1000000 : " + p8.makeStringWholeNumber(1000000));
-        System.out.println("123456789 : " + p8.makeStringWholeNumber(123456789));
-        System.out.println("123456789123 : " + p8.makeStringWholeNumber(123456789123l));
-    }
 
+        int cache[][]= new int[100][100];
+        for (int[] row: cache) {
+            Arrays.fill(row,1);
+        }
+        System.out.println(cache[0][0]);
+
+    }
     public String makeStringWholeNumber(long number) {
         String numberStr = "";
         if (number == 0) {
