@@ -13,7 +13,7 @@ public class Problem8_1Test {
 
     @BeforeClass
     public static void makeInstance()throws Exception {
-        p1 = new Problem8_1();
+        p1 = new Problem8_1(10);
     }
 
     @Test
@@ -27,6 +27,7 @@ public class Problem8_1Test {
         assertEquals(44, p1.getCountWays(7));
         assertEquals(81, p1.getCountWays(8));
         assertEquals(149, p1.getCountWays(9));
+        assertEquals(274, p1.getCountWays(10));
     }
 
 }

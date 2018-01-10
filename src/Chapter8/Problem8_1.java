@@ -4,11 +4,19 @@ import java.util.Arrays;
 
 /**
  * Created by YangHC on 2018-01-10.
+ *
+ * [문제 8-1]
+ * 트리플 스텝 : 어떤 아이가 n개의 계단을 오른다. 한 번에 1계단 오르기도 하고, 2계단이나 3계단을 오르기도 한다.
+ * 계단을 오르는 방법이 몇 가지가 있는지 계산하는 메서드를 구현하라.
+ *
+ * [Recursive], [Dynamic Programming]
  */
-public class Problem8_1 {
-    private int waysCount[] = new int[99999];
 
-    public Problem8_1() {
+public class Problem8_1 {
+    private int waysCount[];
+
+    public Problem8_1(int n) {
+        waysCount = new int[n];
         Arrays.fill(waysCount, -1);
         waysCount[0] = 1;
         waysCount[1] = 2;
@@ -16,10 +24,9 @@ public class Problem8_1 {
     }
 
     public static void main(String[] args) {
-        Problem8_1 p1 = new Problem8_1();
-
-//        int n = Integer.parseInt(args[0]);
-        System.out.println(p1.getCountWays(4));
+        int n = Integer.parseInt(args[0]);
+        Problem8_1 p1 = new Problem8_1(n);
+        System.out.println(p1.getCountWays(n));
     }
 
     public int getCountWays(int n) {
