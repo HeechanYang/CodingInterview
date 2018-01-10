@@ -43,19 +43,6 @@ public class Problem8_2 {
         }
     }
 
-    public static void main(String[] args) {
-        Problem8_2 p2 = new Problem8_2();
-
-        int board[][] = {
-                {0, 0, 0, 0, 0}
-                , {0, 1, 0, 0, 1}
-                , {0, 1, 0, 0, 0}
-                , {0, 0, 0, 0, 0}};
-        p2.setBoard(board);
-
-        System.out.println(p2.getCountWays(p2.getR() - 1, p2.getC() - 1));
-    }
-
     public int getCountWays(int x, int y) {
         //캐싱을 해놨다면 그대로 리턴
         if (waysCount[x][y] != -1) {
