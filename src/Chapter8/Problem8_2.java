@@ -30,7 +30,7 @@ public class Problem8_2 {
         return c;
     }
 
-    private void setBoard(int board[][]) {
+    public void setBoard(int board[][]) {
         this.board = board;
 
         r = board.length;
@@ -43,8 +43,7 @@ public class Problem8_2 {
         int board[][] = {
                 {0, 0, 0, 0, 0}
                 , {0, 1, 0, 0, 1}
-                , {0, 0, 0, 0, 0}
-                , {0, 0, 0, 0, 0}
+                , {0, 1, 0, 0, 0}
                 , {0, 0, 0, 0, 0}};
         p2.setBoard(board);
 
