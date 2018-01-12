@@ -12,5 +12,13 @@ package Chapter10;
  */
 public class Problem10_5 {
     private String arr[] = {"at","","","","ball","","","car","","","dad","",""};
-    private String arr2[];
+//    private String arr2[];
+
+    public int indexOf(String value){
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i].equals(value))
+                return i;
+        }
+        return -1;
+    }
 }
