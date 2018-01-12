@@ -13,26 +13,56 @@ import java.util.ArrayList;
  * [Sort], [Search]
  */
 public class Problem10_5 {
-    private String arr[] = {"at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""};
-//    private String arr2[];
+    private String arr[] = {"at", "ball", "car", "dad",};
 
-    public static int getCountValidString(String arr[]) {
-        int cnt = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (!arr[i].isEmpty()) {
-                cnt++;
-            }
-        }
-        return cnt;
+    private int start, end;
+
+    public void setArr(String arr[]) {
+        this.arr = arr;
+        start = 0;
+        end = arr.length - 1;
     }
 
-    public static Node[] resetArr(String arr[]) {
-        int validLength = getCountValidString(arr);
-        Node nodes[] = new Node[validLength];
+    public int indexOf(String value) {
+        String temp;
+        do {
+            int tempIdx = (start + end) / 2;
+            System.out.println(tempIdx);
+            temp = arr[tempIdx];
 
-        for (int i = 0; i < arr.length; i++) {
-            nodes[nodes.]
+            //만약 공백문자라면 tempIdx++;
+            while (temp.isEmpty()) {
+                if (++tempIdx > end) {
+                    //끝까지 갔는데 못 찾으면 일단 끝냄
+                    break;
+                }
+                temp = arr[tempIdx];
+            }
+            //끝까지 갔는데 아직 못 찾았다면
+            //원위치로 와서 다시 반대로 ㄱㄱ(tempIdx--;)
+            if (temp.isEmpty()) {
+                tempIdx = (start + end) / 2;
+            }
+            while (temp.isEmpty()) {
+                if (--tempIdx < start) {
+                    //반대로 왔는데도 끝까지 못 찾으면 끝냄
+                    break;
+                }
+                temp = arr[tempIdx];
+            }
+            if (temp.isEmpty()) {
+                return -1;
+            }
+
+            if (temp.equals(value)) {
+                return tempIdx;
+            } else if (temp.compareTo(value) < 0) {
+                start = tempIdx + 1;
+            } else {
+                end = tempIdx - 1;
+            }
         }
+        while (true);
     }
 
     public int indexOfJustUsingLoop(String value) {
