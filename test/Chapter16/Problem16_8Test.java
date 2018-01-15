@@ -7,17 +7,17 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by YangHC on 2018-01-06.
  */
-public class Problem8Test {
-    private static Problem8 p8;
+public class Problem16_8Test {
+    private static Problem16_8 p8;
 
     @BeforeClass
     public static void beforeClassTest()throws Exception {
-        p8 = new Problem8();
+        p8 = new Problem16_8();
         System.out.println("BeforeClass");
     }
     @AfterClass
     public static void afterClassTest()throws Exception {
-        p8 = new Problem8();
+        p8 = new Problem16_8();
         System.out.println("AfterClass");
     }
     @Before

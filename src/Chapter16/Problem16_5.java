@@ -5,11 +5,11 @@ import java.util.Scanner;
 /**
  * Created by YangHC on 2018-01-06.
  */
-public class Problem5 {
+public class Problem16_5 {
     private int cnt5;
 
     public static void main(String[] args) {
-        Problem5 p5 = new Problem5();
+        Problem16_5 p5 = new Problem16_5();
 
         Scanner scanner = new Scanner(System.in);
 

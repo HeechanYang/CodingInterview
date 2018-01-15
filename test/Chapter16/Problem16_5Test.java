@@ -6,12 +6,12 @@ import org.junit.*;
 /**
  * Created by YangHC on 2018-01-06.
  */
-public class Problem5Test {
-    private static Problem5 p5;
+public class Problem16_5Test {
+    private static Problem16_5 p5;
 
     @BeforeClass
     public static void makeInstance()throws Exception {
-        p5 = new Problem5();
+        p5 = new Problem16_5();
     }
 
     @Test

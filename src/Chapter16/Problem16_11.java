@@ -8,7 +8,7 @@ import java.util.HashMap;
 /**
  * Created by YangHC on 2018-01-08.
  */
-public class Problem11 {
+public class Problem16_11 {
     private HashMap<String, Integer> tagHashMap;
     private boolean startTag;
     private boolean startValue;
@@ -16,7 +16,7 @@ public class Problem11 {
 
     private String result;
 
-    public Problem11() {
+    public Problem16_11() {
         tagHashMap = new HashMap<>();
         tagHashMap.put("family", 1);
         tagHashMap.put("person", 2);
@@ -30,7 +30,7 @@ public class Problem11 {
     }
 
     public static void main(String[] args) {
-        Problem11 p11 = new Problem11();
+        Problem16_11 p11 = new Problem16_11();
 
         File file = new File("resources\\family.xml");
         try {

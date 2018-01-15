@@ -6,13 +6,13 @@ import java.util.Arrays;
 /**
  * Created by YangHC on 2018-01-08.
  */
-public class Problem8 {
+public class Problem16_8 {
     private static final String units[] = {"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
     private static final String firstTens[] = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
     private static final String Tens[] = {"Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
     private static final String block[] = {"", "Thousand", "Million", "Billion"};
     public static void main(String[] args) throws IOException {
-        Problem8 p8 = new Problem8();
+        Problem16_8 p8 = new Problem16_8();
         System.out.println("1000 : " + p8.makeStringWholeNumber(1000));
 
         int cache[][]= new int[100][100];

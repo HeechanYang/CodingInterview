@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * Created by YangHC on 2018-01-06.
  */
-public class Problem6 {
+public class Problem16_6 {
     private long[] arr1 = {1, 3, 15, 11, 2};
     private long[] arr2 = {23, 127, 235, 19, 8};
 
     public static void main(String[] args) {
-        Problem6 p6 = new Problem6();
+        Problem16_6 p6 = new Problem16_6();
         p6.sortArray(p6.getArr1());
         p6.sortArray(p6.getArr2());
         p6.deleteUnnecessaryNumber(p6.getArr1(), p6.getArr2());
