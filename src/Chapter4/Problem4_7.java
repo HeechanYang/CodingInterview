@@ -2,6 +2,7 @@ package Chapter4;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Stack;
 
 /**
  * Created by YangHC on 2018-01-15.
@@ -43,7 +44,13 @@ public class Problem4_7 {
         return null;
     }
 
-
+    public void printProcedure(){
+        for(Node project : projects){
+            Stack<Node> stack = new Stack<>();
+            Node temp = project;
+            stack.add(temp);
+        }
+    }
 
     static class Node {
         private char name;
