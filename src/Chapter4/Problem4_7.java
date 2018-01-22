@@ -18,7 +18,6 @@ public class Problem4_7 {
         for (int i = 0; i < p7.projects.length; i++) {
             p7.projects[i] = new Node(projectsName[i]);
         }
-        System.out.println();
         p7.getNode('a').addParent(p7.getNode('d'));
         p7.getNode('f').addParent(p7.getNode('b'));
         p7.getNode('b').addParent(p7.getNode('d'));
