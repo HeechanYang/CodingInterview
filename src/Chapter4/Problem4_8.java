@@ -45,19 +45,13 @@ public class Problem4_8 {
             BinaryTreeNode child = dependency.getChild();
 
             parent.addChild(child);
-            child.setParent(parent);
         }
     }
 
     public void setParentStack() {
         for (int i = 0; i < nodes.length; i++) {
             BinaryTreeNode thisNode = nodes[i];
-            BinaryTreeNode parent = thisNode.getParent();
             parentStack[i].push(thisNode);
-            while (parent != null) {
-                parentStack[i].push(parent);
-                parent = parent.getParent();
-            }
         }
     }
 

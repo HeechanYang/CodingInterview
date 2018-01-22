@@ -7,7 +7,6 @@ package Chapter4;
  */
 public class BinaryTreeNode {
     private String name;
-    private BinaryTreeNode parent;
     private BinaryTreeNode[] children = new BinaryTreeNode[2];
 
     public BinaryTreeNode() {
@@ -29,14 +28,6 @@ public class BinaryTreeNode {
         this.name = name;
     }
 
-    public BinaryTreeNode getParent() {
-        return parent;
-    }
-
-    public void setParent(BinaryTreeNode parent) {
-        this.parent = parent;
-    }
-
     public BinaryTreeNode[] getChildren() {
         return children;
     }
@@ -50,11 +41,13 @@ public class BinaryTreeNode {
             if (children[i] == null) {
                 children[i] = child;
                 break;
+            } else if (i == 2) {
+                throw new IndexOutOfBoundsException();
             }
         }
     }
 
-    public boolean equals(BinaryTreeNode binaryTreeNode){
+    public boolean equals(BinaryTreeNode binaryTreeNode) {
         return this.name.equals(binaryTreeNode.getName());
     }
 }
