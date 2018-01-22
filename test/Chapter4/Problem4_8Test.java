@@ -12,61 +12,34 @@ import static org.junit.Assert.assertEquals;
 public class Problem4_8Test {
     private static Problem4_8 p8;
 
-    @BeforeClass
-    public static void makeInstance() throws Exception {
+    @Before
+    public void makeInstance() throws Exception {
         p8 = new Problem4_8();
-        p8.setTreeExample1();
-        p8.setParentStack();
     }
 
-    @Before
-    public void setInstance() {
-        p8.setTreeExample1();
-        p8.setParentStack();
-    }
 
     @Test
-    public void getFirstAncesterTest1() {
-        assertEquals("f", p8.getFirstAncestor(5, 0).getName());
+    public void getLastAncestor1() {
+        p8.setTreeExample1();
+        assertEquals("a", p8.getLatestAncestor(p8.getNodes().get(5), p8.getNodes().get(3), p8.getNodes().get(4)).getName());
+        assertEquals("a", p8.getLatestAncestor(p8.getNodes().get(5), p8.getNodes().get(2), p8.getNodes().get(4)).getName());
     }
 
-    public void getFirstAncesterTest2() {
-        assertEquals("f", p8.getFirstAncestor(5, 1).getName());
+
+    @Test
+    public void getLastAncestor2() {
+        p8.setTreeExample2();
+        assertEquals("a", p8.getLatestAncestor(p8.getNodes().get(0), p8.getNodes().get(4), p8.getNodes().get(5)).getName());
+        assertEquals("b", p8.getLatestAncestor(p8.getNodes().get(0), p8.getNodes().get(4), p8.getNodes().get(6)).getName());
+        assertEquals("b", p8.getLatestAncestor(p8.getNodes().get(0), p8.getNodes().get(1), p8.getNodes().get(6)).getName());
     }
 
-    public void getFirstAncesterTest3() {
-        assertEquals("f", p8.getFirstAncestor(5, 2).getName());
+
+    @Test
+    public void getLastAncestor3() {
+        p8.setTreeExample3();
+        assertEquals("b", p8.getLatestAncestor(p8.getNodes().get(0), p8.getNodes().get(7), p8.getNodes().get(5)).getName());
+        assertEquals("a", p8.getLatestAncestor(p8.getNodes().get(0), p8.getNodes().get(6), p8.getNodes().get(8)).getName());
     }
 
-    public void getFirstAncesterTest4() {
-        assertEquals("f", p8.getFirstAncestor(5, 3).getName());
-    }
-
-    public void getFirstAncesterTest5() {
-        assertEquals("f", p8.getFirstAncestor(5, 4).getName());
-    }
-
-    public void getFirstAncesterTest6() {
-        assertEquals("f", p8.getFirstAncestor(5, 5).getName());
-    }
-
-    public void getFirstAncesterTest7() {
-        assertEquals("f", p8.getFirstAncestor(0, 1).getName());
-    }
-
-    public void getFirstAncesterTest8() {
-        assertEquals("a", p8.getFirstAncestor(3, 4).getName());
-    }
-
-    public void getFirstAncesterTest9() {
-        assertEquals("a", p8.getFirstAncestor(2, 5).getName());
-    }
-
-    public void getFirstAncesterTest10() {
-        assertEquals("d", p8.getFirstAncestor(2, 3).getName());
-    }
-
-    public void getFirstAncesterTest11() {
-        assertEquals("d", p8.getFirstAncestor(3, 2).getName());
-    }
 }
