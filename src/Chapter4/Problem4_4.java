@@ -1,143 +1,95 @@
 package Chapter4;
 
+import java.util.ArrayList;
+
 /**
  * Created by YangHC on 2018-01-22.
+ * <p>
+ * [문제 4-4]
+ * 균형 확인 : 이진 트리가 균형 잡혀있는지 확인하는 함수를 작성하라. 이 문제에서
+ * 균형 잡힌 트리란 모든 노드에 대해서 왼쪽 부분 트리의 높이와 오른쪽 부분 트리의
+ * 높이의 차이가 최대 하나인 트리를 의미한다.
  */
 public class Problem4_4 {
-    private BinaryTreeNode[] nodes;
-    private Tree[] trees;
-    private Dependency[] dependencies;
+    private ArrayList<BinaryTreeNode> nodes;
+    public static int ERROR = Integer.MIN_VALUE;
 
-    public static void main(String[] args) {
-
+    public Problem4_4() {
+        nodes = new ArrayList<>();
     }
 
     public void setTreeExample1() {
-        nodes = new BinaryTreeNode[6];
-        trees = new Tree[nodes.length];
+        nodes.add(new BinaryTreeNode("a"));
+        nodes.add(new BinaryTreeNode("b"));
+        nodes.add(new BinaryTreeNode("c"));
+        nodes.add(new BinaryTreeNode("d"));
+        nodes.add(new BinaryTreeNode("e"));
+        nodes.add(new BinaryTreeNode("f"));
 
-        nodes[0] = new BinaryTreeNode("a");
-        nodes[1] = new BinaryTreeNode("b");
-        nodes[2] = new BinaryTreeNode("c");
-        nodes[3] = new BinaryTreeNode("d");
-        nodes[4] = new BinaryTreeNode("e");
-        nodes[5] = new BinaryTreeNode("f");
-
-        for (int i = 0; i < nodes.length; i++) {
-            trees[i].setRoot(nodes[i]);
-        }
-
-        dependencies = new Dependency[6];
-        dependencies[0] = new Dependency(nodes[0], trees[3]);
-        dependencies[1] = new Dependency(nodes[5], trees[1]);
-        dependencies[2] = new Dependency(nodes[1], trees[3]);
-        dependencies[3] = new Dependency(nodes[5], trees[0]);
-        dependencies[4] = new Dependency(nodes[3], trees[2]);
-        dependencies[5] = new Dependency(nodes[0], trees[4]);
-
-        for (Dependency dependency : dependencies) {
-            BinaryTreeNode parent = dependency.getParent();
-            Tree child = dependency.getChild();
-
-            parent.addChild(child);
-            child.setParent(parent);
-        }
-
-//        nodes[0].getChildren()[0] = nodes[3];   //(a,d)
-//        nodes[5].getChildren()[0] = nodes[1];   //(f,b)
-//        nodes[1].getChildren()[0] = nodes[3];   //(b,d)
-//        nodes[5].getChildren()[1] = nodes[0];   //(f,a)
-//        nodes[3].getChildren()[0] = nodes[2];   //(d,c)
-//        nodes[0].getChildren()[0] = nodes[4];   //(a,e)
-
+        nodes.get(0).addChild(nodes.get(3));   //(a,d)
+        nodes.get(5).addChild(nodes.get(1));   //(f,b)
+        nodes.get(5).addChild(nodes.get(0));   //(f,a)
+        nodes.get(3).addChild(nodes.get(2));   //(d,c)
+        nodes.get(0).addChild(nodes.get(4));   //(a,e)
     }
 
-    class Tree {
-        private BinaryTreeNode parent;
-        private BinaryTreeNode root;
-        private int depth = -1;
+    public void setTreeExample2() {
+        nodes.add(new BinaryTreeNode("a"));
+        nodes.add(new BinaryTreeNode("b"));
+        nodes.add(new BinaryTreeNode("c"));
+        nodes.add(new BinaryTreeNode("d"));
+        nodes.add(new BinaryTreeNode("e"));
+        nodes.add(new BinaryTreeNode("f"));
+        nodes.add(new BinaryTreeNode("g"));
+        nodes.add(new BinaryTreeNode("h"));
+        nodes.add(new BinaryTreeNode("i"));
 
-        public BinaryTreeNode getParent() {
-            return parent;
+        nodes.get(0).addChild(nodes.get(1));
+        nodes.get(0).addChild(nodes.get(2));
+        nodes.get(1).addChild(nodes.get(3));
+        nodes.get(1).addChild(nodes.get(4));
+        nodes.get(2).addChild(nodes.get(5));
+        nodes.get(3).addChild(nodes.get(6));
+        nodes.get(3).addChild(nodes.get(7));
+        nodes.get(5).addChild(nodes.get(8));
+    }
+
+    public void setTreeExample3() {
+        nodes.add(new BinaryTreeNode("a"));
+        nodes.add(new BinaryTreeNode("b"));
+        nodes.add(new BinaryTreeNode("c"));
+        nodes.add(new BinaryTreeNode("d"));
+        nodes.add(new BinaryTreeNode("e"));
+        nodes.add(new BinaryTreeNode("f"));
+        nodes.add(new BinaryTreeNode("g"));
+        nodes.add(new BinaryTreeNode("h"));
+        nodes.add(new BinaryTreeNode("i"));
+
+        nodes.get(0).addChild(nodes.get(1));
+        nodes.get(0).addChild(nodes.get(2));
+        nodes.get(1).addChild(nodes.get(3));
+        nodes.get(1).addChild(nodes.get(4));
+        nodes.get(2).addChild(nodes.get(6));
+        nodes.get(3).addChild(nodes.get(7));
+        nodes.get(3).addChild(nodes.get(8));
+        nodes.get(4).addChild(nodes.get(5));
+    }
+
+    public int preOrderTraversal(BinaryTreeNode root) {
+        if (root == null) {
+            return -1;
         }
+        int leftTreeDepth = preOrderTraversal(root.getChildren()[0]);
+        int rightTreeDepth = preOrderTraversal(root.getChildren()[1]);
 
-        public void setParent(BinaryTreeNode parent) {
-            this.parent = parent;
-        }
-
-        public BinaryTreeNode getRoot() {
-            return root;
-        }
-
-        public void setRoot(BinaryTreeNode root) {
-            this.root = root;
-        }
-
-        public int getDepth() {
-            return depth;
-        }
-
-        public void setDepth(int depth) {
-            this.depth = depth;
-        }
-
-        public boolean isEmpty() {
-            return root.isEmpty();
+        if (Math.abs(leftTreeDepth - rightTreeDepth) > 1 || leftTreeDepth == ERROR || rightTreeDepth == ERROR) {
+            return ERROR;
+        } else {
+            return (Math.max(leftTreeDepth, rightTreeDepth) + 1);
         }
     }
 
-    class Dependency {
-        private BinaryTreeNode parent;
-        private Tree child;
-
-        public Dependency(BinaryTreeNode parent, Tree child) {
-            this.parent = parent;
-            this.child = child;
-        }
-
-        public BinaryTreeNode getParent() {
-            return parent;
-        }
-
-        public Tree getChild() {
-            return child;
-        }
-    }
-
-    class BinaryTreeNode {
-        private String name;
-        private Tree[] children = new Tree[2];
-
-        public BinaryTreeNode() {
-        }
-
-        public BinaryTreeNode(String name) {
-            this.name = name;
-        }
-
-        public boolean isEmpty() {
-            return this.name.isEmpty();
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public Tree[] getChildren() {
-            return children;
-        }
-
-        public void addChild(Tree child) {
-            for (int i = 0; i < children.length; i++) {
-                if (children[i].isEmpty()) {
-                    children[i] = child;
-                    break;
-                }
-            }
-        }
+    public ArrayList<BinaryTreeNode> getNodes() {
+        return nodes;
     }
 }
