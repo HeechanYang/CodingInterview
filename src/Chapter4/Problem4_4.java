@@ -6,6 +6,7 @@ package Chapter4;
 public class Problem4_4 {
     private BinaryTreeNode[] nodes;
     private Tree[] trees;
+    private Dependency[] dependencies;
 
     public static void main(String[] args) {
 
@@ -26,7 +27,7 @@ public class Problem4_4 {
             trees[i].setRoot(nodes[i]);
         }
 
-        Dependency[] dependencies = new Dependency[6];
+        dependencies = new Dependency[6];
         dependencies[0] = new Dependency(nodes[0], trees[3]);
         dependencies[1] = new Dependency(nodes[5], trees[1]);
         dependencies[2] = new Dependency(nodes[1], trees[3]);
@@ -49,13 +50,12 @@ public class Problem4_4 {
 //        nodes[3].getChildren()[0] = nodes[2];   //(d,c)
 //        nodes[0].getChildren()[0] = nodes[4];   //(a,e)
 
-
     }
 
     class Tree {
         private BinaryTreeNode parent;
         private BinaryTreeNode root;
-        private int depth=-1;
+        private int depth = -1;
 
         public BinaryTreeNode getParent() {
             return parent;
@@ -81,7 +81,7 @@ public class Problem4_4 {
             this.depth = depth;
         }
 
-        public boolean isEmpty(){
+        public boolean isEmpty() {
             return root.isEmpty();
         }
     }
@@ -108,13 +108,14 @@ public class Problem4_4 {
         private String name;
         private Tree[] children = new Tree[2];
 
-        public BinaryTreeNode(){}
+        public BinaryTreeNode() {
+        }
 
         public BinaryTreeNode(String name) {
             this.name = name;
         }
 
-        public boolean isEmpty(){
+        public boolean isEmpty() {
             return this.name.isEmpty();
         }
 
@@ -130,10 +131,10 @@ public class Problem4_4 {
             return children;
         }
 
-        public void addChild(Tree child){
-            for(int i=0;i<children.length;i++){
-                if(children[i].isEmpty()){
-                    children[i]=child;
+        public void addChild(Tree child) {
+            for (int i = 0; i < children.length; i++) {
+                if (children[i].isEmpty()) {
+                    children[i] = child;
                     break;
                 }
             }
