@@ -9,8 +9,8 @@ package Chapter1;
  */
 public class Problem1_7 {
 
-    public int[][] getRotatedImage(int[][] image) {
-//        i,j <- m-j,i <- m-i,m-j <- j,m-i
+    public int[][] getRotatedImageReverseClockWise(int[][] image) {
+//      i,j -> m-j,i -> m-i,m-j -> j,m-i
         int M = image.length - 1;
 
         printImage(image);
@@ -20,10 +20,10 @@ public class Problem1_7 {
         for (int i = 0; i < (M + 2) / 2; i++) {
             for (int j = i; j < M - i; j++) {
                 temp = image[i][j];
-                image[i][j] = image[M - j][i];
-                image[M - j][i] = image[M - i][M - j];
-                image[M - i][M - j] = image[j][M - i];
-                image[j][M - i] = temp;
+                image[i][j] = image[j][M-i];
+                image[j][M-i] = image[M-i][M - j];
+                image[M - i][M - j] = image[M-j][i];
+                image[M-j][i] = temp;
             }
         }
 
@@ -33,7 +33,7 @@ public class Problem1_7 {
     }
 
     public int[][] getRotatedImageClockWise(int[][] image) {
-//       i,j -> m-j,i -> m-i,m-j -> j,m-i
+//      i,j <- m-j,i <- m-i,m-j <- j,m-i
         int M = image.length - 1;
 
         printImage(image);
