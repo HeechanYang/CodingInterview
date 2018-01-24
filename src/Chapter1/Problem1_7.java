@@ -17,13 +17,13 @@ public class Problem1_7 {
         System.out.println("==========ROTATE===========");
 
         int temp;
-        for (int i = 0; i < (M + 2) / 2; i++) {
-            for (int j = i; j < M - i; j++) {
-                temp = image[i][j];
-                image[i][j] = image[j][M - i];
-                image[j][M - i] = image[M - i][M - j];
-                image[M - i][M - j] = image[M - j][i];
-                image[M - j][i] = temp;
+        for (int layer = 0; layer < (M + 2) / 2; layer++) {
+            for (int i = layer; i < M - layer; i++) {
+                temp = image[layer][i];
+                image[layer][i] = image[i][M - layer];
+                image[i][M - layer] = image[M - layer][M - i];
+                image[M - layer][M - i] = image[M - i][layer];
+                image[M - i][layer] = temp;
             }
         }
 
@@ -41,13 +41,13 @@ public class Problem1_7 {
         System.out.println("==========ROTATE===========");
 
         int temp;
-        for (int i = 0; i < (M + 2) / 2; i++) {
-            for (int j = i; j < M - i; j++) {
-                temp = image[i][j];
-                image[i][j] = image[M - j][i];
-                image[M - j][i] = image[M - i][M - j];
-                image[M - i][M - j] = image[j][M - i];
-                image[j][M - i] = temp;
+        for (int layer = 0; layer < (M + 2) / 2; layer++) {
+            for (int i = layer; i < M - layer; i++) {
+                temp = image[layer][i];
+                image[layer][i] = image[M - i][layer];
+                image[M - i][layer] = image[M - layer][M - i];
+                image[M - layer][M - i] = image[i][M - layer];
+                image[i][M - layer] = temp;
             }
         }
 
