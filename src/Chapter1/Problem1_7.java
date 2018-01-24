@@ -14,20 +14,21 @@ public class Problem1_7 {
         int M = image.length - 1;
 
         printImage(image);
-        System.out.println("===========================");
+        System.out.println("==========ROTATE===========");
 
         int temp;
         for (int i = 0; i < (M + 2) / 2; i++) {
             for (int j = i; j < M - i; j++) {
                 temp = image[i][j];
-                image[i][j] = image[j][M-i];
-                image[j][M-i] = image[M-i][M - j];
-                image[M - i][M - j] = image[M-j][i];
-                image[M-j][i] = temp;
+                image[i][j] = image[j][M - i];
+                image[j][M - i] = image[M - i][M - j];
+                image[M - i][M - j] = image[M - j][i];
+                image[M - j][i] = temp;
             }
         }
 
         printImage(image);
+        System.out.println("************END************\n");
 
         return image;
     }
@@ -37,7 +38,7 @@ public class Problem1_7 {
         int M = image.length - 1;
 
         printImage(image);
-        System.out.println("===========================");
+        System.out.println("==========ROTATE===========");
 
         int temp;
         for (int i = 0; i < (M + 2) / 2; i++) {
@@ -51,6 +52,7 @@ public class Problem1_7 {
         }
 
         printImage(image);
+        System.out.println("************END************\n");
 
         return image;
     }
