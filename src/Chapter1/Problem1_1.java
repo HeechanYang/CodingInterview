@@ -1,4 +1,4 @@
-package Chpater1;
+package Chapter1;
 
 import java.util.Hashtable;
 

@@ -1,6 +1,5 @@
 package Chapter1;
 
-import Chpater1.Problem1_1;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -18,24 +17,20 @@ public class Chapter1_1Test {
         p1 = new Problem1_1();
     }
 
-    @Before
-    public void setStringBuilder(){
-    }
-
     @Test
     public void hasDuplicatedWordTest1() {
-        p1.setSb("abcdefga");
+        p1.setStr("abcdefga");
         assertEquals(true, p1.hasDuplicatedWord());
     }
 
     @Test
     public void hasDuplicatedWordTest2() {
-        p1.setSb("abcdefghijklmnop");
+        p1.setStr("abcdefghijklmnop");
         assertEquals(false, p1.hasDuplicatedWord());
     }
     @Test
     public void hasDuplicatedWordTest3() {
-        p1.setSb("qrsakjnxvba");
+        p1.setStr("qrsakjnxvba");
         assertEquals(true, p1.hasDuplicatedWord());
     }
 }
