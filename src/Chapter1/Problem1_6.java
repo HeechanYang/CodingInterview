@@ -10,15 +10,13 @@ package Chapter1;
  * 이루어져 있다.
  */
 public class Problem1_6 {
-    public static void main(String[] args) {
-        Problem1_6 p6 = new Problem1_6();
-        System.out.println(p6.getCompressedString("abccc"));
-    }
 
     public String getCompressedString(String str) {
         StringBuilder sb = new StringBuilder(str);
+
         char temp = sb.charAt(0);
         int tempCnt = 1;
+
         for (int i = 1; i < sb.length(); i++) {
             char thisChar = sb.charAt(i);
             if (thisChar != temp) {
@@ -32,6 +30,33 @@ public class Problem1_6 {
                 i--;
             }
         }
+        sb.append(tempCnt);
+
+        if(str.length()<sb.length()){
+            return str;
+        }else {
+            return sb.toString();
+        }
+    }
+
+    public String getCompressedString2(String str) {
+        StringBuilder sb = new StringBuilder();
+
+        char temp = str.charAt(0);
+        int tempCnt = 1;
+
+        for (int i = 1; i < str.length(); i++) {
+            char thisChar = str.charAt(i);
+            if (thisChar != temp) {
+                sb.append(temp);
+                sb.append(tempCnt);
+                temp = thisChar;
+                tempCnt = 1;
+            } else {
+                tempCnt++;
+            }
+        }
+        sb.append(temp);
         sb.append(tempCnt);
 
         if(str.length()<sb.length()){

@@ -18,9 +18,9 @@ public class Chapter1_6Test {
 
     @Test
     public void getCompressedStringTest() {
-        assertEquals("abccc", p6.getCompressedString("abccc"));
-        assertEquals("a1b1c4", p6.getCompressedString("abcccc"));
-        assertEquals("abc", p6.getCompressedString("abc"));
-        assertEquals("a2b1c5a3", p6.getCompressedString("aabcccccaaa"));
+        assertEquals("abccc", p6.getCompressedString2("abccc"));
+        assertEquals("a1b1c4", p6.getCompressedString2("abcccc"));
+        assertEquals("abc", p6.getCompressedString2("abc"));
+        assertEquals("a2b1c5a3", p6.getCompressedString2("aabcccccaaa"));
     }
 }
