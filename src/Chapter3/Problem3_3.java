@@ -61,7 +61,11 @@ class SetOfStacks {
         return idx + 1;
     }
 
-    public int getCurrentStackNum(){
+    public boolean isEmpty() {
+        return (idx < 0);
+    }
+
+    public int getCurrentStackNum() {
         return idx / MAX_STACK_SIZE;
     }
 }
