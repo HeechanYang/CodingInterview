@@ -12,7 +12,7 @@ import java.util.Stack;
  * <p>
  * 기존 스택에 push할 때, 새로운 숫자와 기존 스택의 peek과 비교하며 pop하여 다른 스택에 push했다가
  * 새로운 숫자의 자리를 찾으면 push 후 다른 스택의 값들을 pop하여 기존 스택에 다시 옮긴다.
- * 나머지(pop, peek, isEmpty)는 그대로 구현하면 된다.
+ * 나머지(pop, peek, isEmpty)는 그대로 구현하면 된다. (단, push의 시간복잡도는 O(n) )
  */
 public class Problem3_5 {
 }
