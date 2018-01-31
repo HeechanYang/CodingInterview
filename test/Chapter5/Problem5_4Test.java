@@ -32,8 +32,10 @@ public class Problem5_4Test {
 
     @Test
     public void getCountOneTest() {
-        assertEquals(4, p4.getCountOne(232));
-        assertEquals(5, p4.getCountOne(488));
-        assertEquals(6, p4.getCountOne(984));
+        assertEquals(Integer.bitCount(232), p4.getCountOne(232));
+        assertEquals(Integer.bitCount(488), p4.getCountOne(488));
+        assertEquals(Integer.bitCount(984), p4.getCountOne(984));
+        assertEquals(Integer.bitCount(-1), p4.getCountOne(-1));
+        assertEquals(Integer.bitCount(-53142), p4.getCountOne(-53142));
     }
 }

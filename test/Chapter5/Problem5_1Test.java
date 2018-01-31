@@ -19,9 +19,6 @@ public class Problem5_1Test {
     @Test
     public void getLongestOneLength() {
         assertEquals(2124, p1.insertMIntoN(19, 2048, 2, 6));
-//        assertEquals(7, p3.getLongestOneLength(7902));
-//        assertEquals(7, p3.getLongestOneLength(3806));
+        assertEquals(243, p1.insertMIntoN(9, 245, 1, 4));       //1001, 11110101   --> 11110011 11110111
     }
-
-
 }

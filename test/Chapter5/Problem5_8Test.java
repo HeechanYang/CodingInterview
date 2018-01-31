@@ -3,6 +3,7 @@ package Chapter5;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -18,7 +19,9 @@ public class Problem5_8Test {
 
     @Test
     public void isBinaryExponentiation() {
-//        assertEquals(926, p8.swapEachTwoBit(877));
+        byte[] board = {1,1,1,1,1,1,1,1,1,1,1,1};
+        assertArrayEquals(new byte[]{1,1,1,1,-1,1,1,1,1,1,1,1}, p8.drawLine(board,32,0,7,1));
+        assertArrayEquals(new byte[]{1,1,1,1,-1,-1,1,1,1,1,1,1}, p8.drawLine(board,32,0,8,1));
     }
 
 }

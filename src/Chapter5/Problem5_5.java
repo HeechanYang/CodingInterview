@@ -14,8 +14,7 @@ public class Problem5_5 {
     //=11111110 (false)
     // 10000000
     //&01111111
-    // 00000000 (false)
-
+    // 00000000 (true)
     public boolean func(int num) {
         return (num & (num - 1)) == 0;
     }
